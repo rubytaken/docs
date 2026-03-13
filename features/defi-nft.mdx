@@ -1,0 +1,123 @@
+---
+title: "DeFi & NFT tools"
+description: "Analyze DeFi protocols, find yield opportunities, evaluate NFT collections, and track DEX activity with heyRISA agents."
+---
+
+## DeFi analysis
+
+### Protocol comparison
+
+Ask agents to compare DeFi protocols by TVL, risk, fees, and yield. Supported protocols include:
+
+| Protocol | Chain | Type |
+|----------|-------|------|
+| Jupiter | Solana | DEX aggregator |
+| Orca | Solana | Concentrated liquidity |
+| Raydium | Solana | AMM & liquidity |
+| Kamino | Solana | Yield vaults |
+| Uniswap | Ethereum, L2s | DEX |
+| Aave | Multi-chain | Lending |
+| Compound | Ethereum | Lending |
+
+**Example prompts:**
+```
+Compare DeFi protocols by TVL and risk
+```
+```
+What's the best lending rate for USDC right now?
+```
+
+### Yield farming
+
+The **Yield Farming Optimizer** agent scans available opportunities and ranks them by:
+
+- Annual Percentage Yield (APY)
+- Risk level (impermanent loss exposure, protocol risk)
+- Minimum deposit amounts
+- Lock-up periods
+
+**Example prompts:**
+```
+Best yield farming opportunities right now?
+```
+```
+Compare staking APYs for SOL across protocols
+```
+
+### Liquidity pool analysis
+
+Agents calculate real-time metrics for any liquidity pool:
+
+- Current APY and fee revenue
+- Impermanent loss at various price scenarios
+- Volume trends and utilization ratio
+- Comparison with competing pools
+
+## NFT analysis
+
+### Collection evaluation
+
+The **NFT Collection Evaluator** agent provides:
+
+- **Floor price tracking** — real-time across marketplaces
+- **Rarity analysis** — AI-scored rarity for individual items
+- **Market trends** — volume, listings, sales velocity
+- **Blue-chip ratings** — risk assessment for holds
+
+**Example prompts:**
+```
+Analyze my Solana NFT collection
+```
+```
+What are the top NFT collections by volume today?
+```
+
+### Portfolio breakdown
+
+When you connect your wallet, agents automatically detect your NFTs and provide:
+
+- Total estimated portfolio value
+- Breakdown by collection
+- Unrealized profit/loss per item
+- Suggested actions (hold, sell, accumulate)
+
+## DEX screening
+
+heyRISA integrates directly with **DexScreener** for real-time DEX data:
+
+### What you can track
+
+- **New pair launches** — tokens listed in the last 24h with liquidity and volume data
+- **Trending tokens** — highest volume and price movement across all DEXs
+- **Pair analysis** — detailed metrics for any trading pair
+- **Chain analytics** — DEX activity by blockchain network
+
+**Example prompts:**
+```
+What's trending on DexScreener today?
+```
+```
+Any new token launches on DEXs?
+```
+```
+Show me the top DEX pairs on Solana by volume
+```
+
+## On-chain analytics (Dune)
+
+Specialized Dune Analytics agents provide protocol-level and chain-level metrics:
+
+<CardGroup cols={2}>
+  <Card title="DEX analytics" icon="chart-bar">
+    Trading volume, market share between DEXs, and liquidity depth.
+  </Card>
+  <Card title="Whale tracking" icon="fish">
+    Large wallet movements, accumulation patterns, and notable transactions.
+  </Card>
+  <Card title="Protocol metrics" icon="coins">
+    TVL trends, user growth, revenue, and fee distribution for DeFi protocols.
+  </Card>
+  <Card title="Network health" icon="network-wired">
+    Active addresses, gas costs, transaction throughput, and chain comparisons.
+  </Card>
+</CardGroup>

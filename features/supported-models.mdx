@@ -1,0 +1,129 @@
+---
+title: "Supported models"
+description: "heyRISA supports multiple AI models from Azure, Mistral, Google, OpenAI, and OpenRouter. Switch between models based on your task."
+---
+
+## Available models
+
+All models are available on the free tier with daily usage limits. Switch between models using the model selector in the chat header.
+
+### Azure models
+
+<CardGroup cols={2}>
+  <Card title="GPT-4o Mini (Azure)" icon="bolt">
+    **Provider:** Azure OpenAI
+
+    Fast and affordable with full tool calling support. Great balance of speed and capability for everyday crypto queries.
+
+    **Supports:** File upload, tool calling
+  </Card>
+
+  <Card title="GPT-4.1 (Azure)" icon="brain">
+    **Provider:** Azure OpenAI
+
+    The most capable model available. Handles complex reasoning, multi-step analysis, and deep research tasks.
+
+    **Supports:** File upload, tool calling, advanced reasoning
+  </Card>
+</CardGroup>
+
+### Mistral models
+
+<CardGroup cols={2}>
+  <Card title="Pixtral Large" icon="eye">
+    **Provider:** Mistral
+
+    Mistral's flagship model with image understanding. Strong at reasoning, writing, and multimodal analysis.
+
+    **Supports:** File upload, tool calling
+  </Card>
+
+  <Card title="Mistral Large" icon="message">
+    **Provider:** Mistral
+
+    Optimized for chat. A fast option for everyday conversations and quick questions.
+
+    **Supports:** Tool calling
+  </Card>
+
+  <Card title="Devstral Small" icon="code">
+    **Provider:** Mistral (via OpenRouter)
+
+    Optimized for coding tasks. Use this for code generation, debugging, and programming questions.
+
+    **Supports:** Tool calling
+  </Card>
+</CardGroup>
+
+### Google models
+
+<CardGroup cols={2}>
+  <Card title="Gemini 3.1 Flash Lite" icon="zap">
+    **Provider:** Google
+
+    Google's fastest Gemini model. 2.5x faster than previous versions with 1M token context window. Best for high-volume, quick-response tasks.
+
+    **Supports:** File upload, tool calling
+  </Card>
+
+  <Card title="Gemma 3n E2B" icon="feather">
+    **Provider:** Google (via OpenRouter)
+
+    Lightweight and efficient. Good for everyday chat and creative tasks.
+
+    **Free tier**
+  </Card>
+</CardGroup>
+
+### OpenAI models
+
+<CardGroup cols={2}>
+  <Card title="GPT-4o Mini" icon="robot">
+    **Provider:** OpenAI (via OpenRouter)
+
+    Same GPT-4o Mini model accessed through OpenRouter. Useful as a fallback when Azure is at capacity.
+
+    **Supports:** File upload, tool calling
+  </Card>
+
+  <Card title="GPT-OSS 120B" icon="server">
+    **Provider:** OpenAI (via OpenRouter)
+
+    Open-source 120B parameter model with strong reasoning and generation capabilities.
+
+    **Free tier**
+  </Card>
+</CardGroup>
+
+### Other models
+
+<CardGroup cols={2}>
+  <Card title="Hunter Alpha" icon="crosshairs">
+    **Provider:** OpenRouter
+
+    OpenRouter's custom model optimized for fast, intelligent conversations.
+
+    **Free tier**
+  </Card>
+
+  <Card title="Step 3.5 Flash" icon="forward">
+    **Provider:** StepFun (via OpenRouter)
+
+    Fast and efficient for quick responses and everyday tasks.
+
+    **Free tier**
+  </Card>
+</CardGroup>
+
+## How to choose a model
+
+| Use case | Recommended model |
+|----------|-------------------|
+| Quick price checks and simple questions | Gemini 3.1 Flash Lite |
+| Complex analysis with multiple tools | GPT-4.1 (Azure) |
+| General daily usage | GPT-4o Mini (Azure) |
+| Image/chart analysis | Pixtral Large |
+| Code-related questions | Devstral Small |
+| Casual conversation | Any free tier model |
+
+<Tip>The default model is **Gemini 3.1 Flash Lite** — it offers the best speed-to-quality ratio for most crypto queries.</Tip>

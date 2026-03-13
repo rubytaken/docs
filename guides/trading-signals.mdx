@@ -1,0 +1,124 @@
+---
+title: "Trading signals"
+description: "How to use heyRISA's AI-powered trading signals: price predictions, technical analysis, and strategy building."
+---
+
+## How trading signals work
+
+heyRISA's trading signal agents combine multiple technical indicators with real-time price data to generate **buy, sell, or hold** recommendations. Each signal includes a **confidence score** (0-100%) so you can gauge the strength of the recommendation.
+
+<Warning>Trading signals are AI-generated analysis, not financial advice. Always do your own research before making trading decisions.</Warning>
+
+## Get a price signal
+
+<Steps>
+  <Step title="Ask for a signal">
+    ```
+    BTC buy or sell signal right now?
+    ```
+
+    The **Price Predictor** agent analyzes:
+    - RSI (overbought/oversold)
+    - MACD (trend momentum)
+    - Bollinger Bands (volatility breakouts)
+    - Moving averages (trend direction)
+  </Step>
+
+  <Step title="Read the signal">
+    The response includes:
+    - **Signal direction** — BUY, SELL, or HOLD
+    - **Confidence score** — e.g., "82% confidence on this buy signal"
+    - **Key indicators** — which indicators support the signal
+    - **Support/resistance levels** — price targets and stop-loss zones
+  </Step>
+
+  <Step title="Drill into details">
+    Ask follow-up questions for more specifics:
+    ```
+    What are the exact support and resistance levels for ETH?
+    ```
+    ```
+    Show me the RSI and MACD values for SOL
+    ```
+  </Step>
+</Steps>
+
+## Technical analysis
+
+The **Technical Analysis Expert** agent provides full-spectrum chart analysis:
+
+```
+Give me a full technical analysis on BTC
+```
+
+### Available indicators
+
+| Indicator | Signal type | What to look for |
+|-----------|------------|------------------|
+| RSI | Momentum | Below 30 = oversold (potential buy), above 70 = overbought (potential sell) |
+| MACD | Trend | Crossover above signal line = bullish, below = bearish |
+| Bollinger Bands | Volatility | Price touching lower band = potential bounce, upper band = potential reversal |
+| SMA/EMA crossovers | Trend | Short-term crossing above long-term = bullish (golden cross) |
+| Volume analysis | Confirmation | Rising volume confirms trend, declining volume suggests weakness |
+
+### Multi-timeframe analysis
+
+Request analysis across different timeframes for convergence:
+
+```
+Compare BTC signals on 1h, 4h, and daily timeframes
+```
+
+When signals align across timeframes, the confidence is higher.
+
+## Build a strategy
+
+### DCA planning
+
+```
+Build me a DCA strategy for this market
+```
+
+The agent suggests:
+- Entry frequency (daily, weekly, bi-weekly)
+- Allocation per entry
+- Token selection based on current conditions
+- Adjustment triggers
+
+### Position sizing
+
+```
+How should I size my next trade?
+```
+
+Based on your portfolio size and the trade risk:
+- Recommended position size
+- Stop-loss placement
+- Risk/reward ratio
+- Maximum drawdown tolerance
+
+### Stop-loss and take-profit
+
+```
+Set my stop-loss and take-profit levels for a BTC long
+```
+
+The agent calculates levels based on:
+- Current support/resistance
+- Average True Range (ATR) for volatility
+- Risk tolerance settings
+- Recent price action patterns
+
+## Market context
+
+Combine trading signals with broader market analysis for better decisions:
+
+```
+BTC signal + what's the overall market sentiment?
+```
+
+```
+Is this a good time to enter altcoins? Check dominance and Fear & Greed
+```
+
+<Tip>Signals with 70%+ confidence are highlighted by agents. Below that threshold, consider waiting or gathering more data.</Tip>
