@@ -14,14 +14,14 @@
         "tab": "Documentation",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "🚀 Getting started",
             "pages": [
               "index",
               "quickstart"
             ]
           },
           {
-            "group": "Features",
+            "group": "✨ Features",
             "pages": [
               "features/overview",
               "features/ai-agents",
@@ -31,7 +31,7 @@
             ]
           },
           {
-            "group": "Guides",
+            "group": "📖 Guides",
             "pages": [
               "guides/chat-basics",
               "guides/portfolio-analysis",
@@ -52,6 +52,11 @@
           "anchor": "Community",
           "href": "https://t.me/heyrisa",
           "icon": "comments"
+        },
+        {
+          "anchor": "Litepaper",
+          "href": "/litepaper",
+          "icon": "file-lines"
         }
       ]
     }

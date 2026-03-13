@@ -1,0 +1,448 @@
+---
+title: "📄 Litepaper"
+description: "heyRISA Litepaper — the technical and strategic overview of the crypto-native AI intelligence platform."
+mode: "wide"
+---
+
+## Executive summary
+
+heyRISA is a crypto-native AI intelligence platform that connects users to real-time market data through specialized AI agents. The platform provides institutional-grade analytics — technical analysis, sentiment tracking, wallet intelligence, and DeFi optimization — through a conversational chat interface accessible to anyone.
+
+The platform runs 33+ domain-specific AI agents, each with access to 40+ real-data tools spanning price feeds, on-chain analytics, DEX data, and news aggregation. Users interact in natural language and receive formatted, actionable insights backed by live data from CoinGecko, DexScreener, Helius, Dune Analytics, and other providers.
+
+heyRISA operates on a multi-model AI architecture, supporting providers including Azure OpenAI, Google Gemini, Mistral, and OpenRouter. This ensures redundancy, model diversity, and the ability to match the right model to each task.
+
+---
+
+## 1. Problem statement
+
+### 1.1 Information overload in crypto markets
+
+Cryptocurrency markets operate 24/7 across thousands of tokens, hundreds of chains, and dozens of DeFi protocols. Individual traders face an overwhelming volume of data — price movements, on-chain signals, social sentiment, token unlocks, protocol updates, and macroeconomic events — that no human can process in real time.
+
+### 1.2 Fragmented tooling
+
+Today's crypto trader must navigate between multiple disconnected tools:
+
+| Tool category | Examples | Limitation |
+|---------------|----------|------------|
+| Price trackers | CoinGecko, CoinMarketCap | No analysis, just raw data |
+| Chart platforms | TradingView | Requires manual interpretation |
+| On-chain analytics | Dune, Nansen | High learning curve, SQL knowledge needed |
+| Portfolio trackers | DeBank, Zapper | No AI-powered insights |
+| News aggregators | CoinDesk, The Block | No sentiment scoring or impact analysis |
+| DEX screeners | DexScreener | Discovery only, no strategy layer |
+
+Each tool provides a fragment of the picture. No single platform combines all data sources with AI-powered interpretation in a conversational interface.
+
+### 1.3 Access gap
+
+Institutional-grade analytics — multi-indicator technical analysis, sentiment scoring, risk-adjusted portfolio optimization, and whale tracking — have historically been available only to hedge funds and proprietary trading desks. Retail traders lack access to these capabilities or the technical expertise to build them.
+
+---
+
+## 2. Solution: heyRISA platform
+
+### 2.1 Architecture overview
+
+heyRISA is built on a three-layer architecture:
+
+```
+┌─────────────────────────────────────────────┐
+│              User Interface Layer            │
+│     Chat Interface · Agent Selector ·        │
+│     Model Picker · Wallet Connection         │
+├─────────────────────────────────────────────┤
+│            AI Agent Orchestration            │
+│   33+ Specialized Agents · Tool Router ·     │
+│   Multi-Model Support · Context Management   │
+├─────────────────────────────────────────────┤
+│            Data & Integration Layer          │
+│  CoinGecko · DexScreener · Helius · Dune ·   │
+│  CryptoCompare · Alternative.me · Tavily ·   │
+│  Multi-Chain RPCs · Wallet Adapters          │
+└─────────────────────────────────────────────┘
+```
+
+**User interface layer:** A Next.js 15 application with real-time streaming responses, dark/light mode, mobile responsiveness, and wallet connection capabilities. Users interact through natural language chat with rich formatted outputs including tables, charts, badges, and follow-up suggestions.
+
+**AI agent orchestration:** Each agent has a domain-specific system prompt, a curated set of tools, and access to one or more AI models. The orchestration layer routes user queries to the appropriate agent and manages tool calling, context windows, and response formatting.
+
+**Data & integration layer:** 40+ tools connect to live data providers. All data is fetched in real-time — no caching, no stale data. Tools return structured data that agents format into readable analysis.
+
+### 2.2 Multi-model AI strategy
+
+heyRISA does not depend on a single AI provider. The platform supports multiple models across providers:
+
+| Provider | Models | Strength |
+|----------|--------|----------|
+| Azure OpenAI | GPT-4o Mini, GPT-4.1 | Reliability, tool calling, complex reasoning |
+| Mistral | Pixtral Large, Mistral Large, Devstral | Multimodal analysis, coding, fast chat |
+| Google | Gemini 3.1 Flash Lite, Gemma 3n | Speed, large context windows |
+| OpenAI (OpenRouter) | GPT-4o Mini, GPT-OSS 120B | Fallback capacity, open-source models |
+| Others (OpenRouter) | Hunter Alpha, Step 3.5 Flash | Diverse model characteristics |
+
+This multi-model approach provides:
+
+- **Redundancy** — if one provider experiences downtime, users switch to another
+- **Task optimization** — complex analysis uses GPT-4.1, quick queries use Flash Lite
+- **Cost efficiency** — free-tier models handle routine tasks, premium models handle deep analysis
+- **Innovation access** — new models are added as they become available
+
+### 2.3 Specialized agent system
+
+Unlike general-purpose chatbots, heyRISA deploys **domain-specific agents** — each trained with a custom system prompt and equipped with only the tools relevant to its domain.
+
+#### Agent categories
+
+**Market analysis (6 agents):**
+Crypto Price Tracker, Technical Analysis Expert, Sentiment Analyst, Market Trend Analyst, Comprehensive Analyst, Market Overview Specialist
+
+**Portfolio & wallet (3 agents):**
+Portfolio Advisor, Solana Wallet Advisor, Portfolio Diversification Advisor
+
+**Trading & prediction (5 agents):**
+Price Predictor, Trading Strategy Tester, Small Cap Gem Hunter, Altcoin Season Predictor, Meme Coin Hunter
+
+**DeFi & yield (3 agents):**
+DeFi Strategy Advisor, Yield Farming Optimizer, NFT Collection Evaluator
+
+**Research & news (3 agents):**
+Event Analyst, Token Unlock Analyzer, Ultra AI Researcher
+
+**On-chain analytics (5 agents):**
+Dune DEX Analyzer, Dune NFT Tracker, Dune DeFi Analyst, Dune Whale Tracker, Dune Blockchain Metrics
+
+**Specialized (8 agents):**
+On-Chain Data Interpreter, Crypto Regulation Navigator, Tokenomics Designer, Blockchain Dev Assistant, Crypto Tax Consultant, DAO Governance Advisor, Layer 2 Ecosystem Guide, Airdrop Hunter, Crosschain Bridge Expert, Realtime Crypto Tracker
+
+#### Why specialization matters
+
+General-purpose AI models struggle with crypto analysis because they lack:
+- Access to real-time data (training data is stale)
+- Domain-specific reasoning patterns (e.g., interpreting RSI divergence)
+- Tool-calling precision (knowing which API to call for which query)
+
+Each heyRISA agent solves these problems with a focused prompt, a curated toolset, and real-time data access.
+
+---
+
+## 3. Core tools & data integration
+
+### 3.1 Complete tool inventory
+
+heyRISA's agents access 40+ tools organized by function:
+
+#### Crypto market tools
+| Tool | Function |
+|------|----------|
+| `cryptoPriceAnalysis` | Real-time price data with market context |
+| `cryptoTechnicalAnalysis` | RSI, MACD, Bollinger Bands, moving averages |
+| `cryptoSentimentAnalysis` | Social + news sentiment scoring |
+| `cryptoCompleteAnalysis` | Combined price + technical + sentiment |
+| `cryptoMarketOverview` | Top gainers, losers, sector trends |
+| `cryptoCoinSearch` | Find coins by name, symbol, or category |
+| `enhancedCoinDiscovery` | Advanced search with filtering |
+| `smallCapMonitor` | Track low-cap tokens by volume and momentum |
+
+#### Token unlock tools
+| Tool | Function |
+|------|----------|
+| `tokenUnlockAnalysis` | Specific token unlock schedule and price impact |
+| `upcomingTokenUnlocks` | Calendar of upcoming unlock events |
+| `tokenEmissionAnalysis` | Inflation rate and supply schedule analysis |
+
+#### Solana ecosystem tools
+| Tool | Function |
+|------|----------|
+| `solanaWalletBalance` | SPL token and SOL balances |
+| `solanaNFTAnalysis` | NFT collections with rarity and floor prices |
+| `solanaTransactionAnalysis` | Transaction history and pattern recognition |
+| `solanaDeFiAnalysis` | Active DeFi positions across protocols |
+| `solanaCompleteWalletAnalysis` | All-in-one Solana wallet deep dive |
+
+#### Multi-chain wallet tools
+| Tool | Function |
+|------|----------|
+| `evmWalletAnalysis` | EVM chain wallet balances and tokens |
+| `svmWalletAnalysis` | Solana Virtual Machine wallet analysis |
+| `evmTransactionAnalysis` | EVM transaction history |
+| `evmActivityAnalysis` | On-chain activity patterns |
+| `multiChainWalletAnalysis` | Unified cross-chain portfolio view |
+| `supportedChainsInfo` | List of all supported blockchain networks |
+| `getUserConnectedWallet` | Retrieve user's connected wallet |
+| `listUserWallets` | List all user wallets |
+
+#### DexScreener tools
+| Tool | Function |
+|------|----------|
+| `dexscreenerPairAnalysis` | Detailed pair metrics and liquidity data |
+| `dexscreenerTokenSearch` | Find tokens across all DEXs |
+| `dexscreenerMarketDiscovery` | Trending pairs and new launches |
+| `dexscreenerPortfolioAnalysis` | DEX-based portfolio valuation |
+| `dexscreenerChainAnalytics` | Per-chain DEX activity metrics |
+
+#### Trading & analytics tools
+| Tool | Function |
+|------|----------|
+| `technicalAnalysis` | Multi-indicator TA with signal generation |
+| `portfolioOptimizer` | Risk-adjusted allocation recommendations |
+| `arbitrageDetector` | Cross-exchange price discrepancy detection |
+| `riskManagement` | Stop-loss, take-profit, position sizing |
+| `displayPriceChart` | Visual price chart rendering |
+
+#### AI signal tools
+| Tool | Function |
+|------|----------|
+| `marketTrendAnalysis` | Sentiment + Fear & Greed macro analysis |
+| `portfolioRebalance` | Risk-based portfolio optimization |
+| `pricePrediction` | Multi-indicator buy/sell/hold signals |
+| `eventCorrelation` | News event impact on price movements |
+
+#### On-chain analytics tools
+| Tool | Function |
+|------|----------|
+| `duneAnalytics` | NFT, DeFi, whale, and blockchain metrics from Dune |
+
+#### Research tools
+| Tool | Function |
+|------|----------|
+| `search` | Web search for latest information |
+| `planSearchQueries` | Multi-query research planning |
+| `summarizeSources` | AI-powered source summarization |
+| `generateReport` | Structured research report generation |
+| `tavily_search` | Enhanced web search via Tavily |
+
+### 3.2 Data provider integrations
+
+| Provider | Data type | Update frequency |
+|----------|-----------|-----------------|
+| CoinGecko | Prices, market cap, volume, historical data | Real-time |
+| CryptoCompare | Price feeds, OHLCV data | Real-time |
+| DexScreener | DEX pairs, trending tokens, new launches | Real-time |
+| Alternative.me | Fear & Greed Index | Every 12 hours |
+| Helius | Solana transactions, NFTs, DeFi, token metadata | Real-time |
+| Dune Analytics | On-chain queries, protocol metrics, whale moves | Varies by query |
+| Tavily | Web search, news aggregation | Real-time |
+| Multi-chain RPCs | Blockchain state (balances, transactions) | Real-time |
+
+---
+
+## 4. Multi-chain support
+
+### 4.1 Supported networks
+
+heyRISA supports wallet analysis and on-chain data across 25+ blockchain networks:
+
+**Layer 1 chains:**
+Ethereum, Solana, BNB Smart Chain, Avalanche, Fantom
+
+**Layer 2 & scaling:**
+Arbitrum, Optimism, Base, Polygon, zkSync
+
+**Application-specific:**
+Additional chains via multi-chain RPC infrastructure
+
+### 4.2 Wallet capabilities by chain
+
+| Capability | Solana | EVM chains |
+|------------|--------|------------|
+| Token balances | Yes | Yes |
+| NFT detection | Yes (with metadata + rarity) | Yes |
+| DeFi positions | Yes (Jupiter, Orca, Raydium, Kamino) | Yes |
+| Transaction history | Yes (with AI analysis) | Yes |
+| Staking detection | Yes | Varies |
+
+### 4.3 Cross-chain portfolio view
+
+The `multiChainWalletAnalysis` tool aggregates holdings across all connected chains into a unified portfolio view with:
+
+- Total portfolio value in USD
+- Per-chain breakdown
+- Asset allocation percentages
+- Cross-chain diversification score
+
+---
+
+## 5. Technical architecture
+
+### 5.1 Frontend stack
+
+| Technology | Purpose |
+|------------|---------|
+| Next.js 15 | App Router, server components, API routes |
+| React 19 | UI rendering with streaming support |
+| Tailwind CSS | Responsive styling system |
+| Shadcn UI | Accessible component library |
+| GSAP | Smooth animations and transitions |
+| Phosphor Icons | Rich iconography |
+| Lightweight Charts | Financial chart rendering |
+
+### 5.2 Backend & data
+
+| Technology | Purpose |
+|------------|---------|
+| Supabase (PostgreSQL) | User authentication, chat history, agent configs |
+| Edge Functions | API route handlers at the edge |
+| AI SDK (Vercel) | Unified interface for multi-provider AI calls |
+| OpenProviders | Custom provider abstraction layer |
+
+### 5.3 AI infrastructure
+
+| Component | Implementation |
+|-----------|---------------|
+| Model routing | Per-request model selection with fallback chains |
+| Tool calling | Structured function calls with JSON schema validation |
+| Streaming | Server-sent events for real-time response rendering |
+| Context management | Conversation history with token-aware truncation |
+| Rate limiting | Per-user daily limits with tier-based allocation |
+
+### 5.4 Security
+
+| Measure | Description |
+|---------|-------------|
+| Authentication | Supabase Auth with email, social, and wallet login |
+| Wallet connection | Read-only — no transaction signing permissions requested |
+| API keys | Server-side only, never exposed to client |
+| Rate limiting | Intelligent per-user and per-model limits |
+| Data encryption | TLS in transit, encrypted at rest in Supabase |
+
+---
+
+## 6. User experience
+
+### 6.1 Conversational interface
+
+The chat interface is designed for crypto traders who need fast, data-rich responses:
+
+- **Streaming responses** — results appear in real-time as the agent processes
+- **Rich formatting** — tables, color-coded badges (BUY/SELL, bullish/bearish), inline charts
+- **Related questions** — each response suggests follow-up queries for deeper analysis
+- **Chat history** — all conversations persisted for reference and continuity
+
+### 6.2 Agent selection
+
+Users can either:
+1. **Direct selection** — pick a specific agent from the agents page
+2. **Suggestion routing** — click a pre-built suggestion that routes to the optimal agent
+3. **Default chat** — type any question and the system routes to the appropriate tools
+
+### 6.3 Crypto-native personality
+
+heyRISA speaks the language of crypto culture. The AI uses natural degen terminology (gm, ser, fren, wagmi, ngmi, rekt, ape in) while delivering data-backed analysis. It matches user energy — bullish when the market is pumping, empathetic when positions are rekt, and contrarian when consensus is too strong.
+
+The system detects the user's language automatically and responds in the same language, while keeping crypto slang terms in English as they are universal.
+
+### 6.4 Time-aware interactions
+
+The AI adjusts its personality based on the user's local time:
+- **Morning (5:00-11:59)** — "gm fren" greetings
+- **Afternoon (12:00-16:59)** — "hey anon" energy
+- **Evening (17:00-4:59)** — "late night degen hours" vibe
+
+---
+
+## 7. Market opportunity
+
+### 7.1 Total addressable market
+
+| Segment | Estimated size | heyRISA positioning |
+|---------|---------------|---------------------|
+| Crypto traders (global) | 420M+ users | Primary audience — free tier |
+| Active DeFi users | 10M+ wallets | Power users — deep analytics |
+| Crypto research subscribers | $2B+ market | Alternative to paid research |
+| Trading bot market | $1.5B+ by 2028 | AI-assisted decision layer |
+
+### 7.2 Competitive landscape
+
+| Competitor | What they do | heyRISA advantage |
+|------------|-------------|-------------------|
+| ChatGPT | General AI chat | No real-time crypto data, no tools |
+| TradingView | Charts + community | No AI analysis, manual interpretation |
+| Dune Analytics | On-chain queries | Requires SQL, no conversational interface |
+| DeBank / Zapper | Portfolio tracking | No AI insights, no trading signals |
+| Nansen | On-chain analytics | Expensive, institutional focus |
+| Arkham | Entity labeling | Narrow focus, no portfolio advice |
+
+heyRISA is the only platform that combines **conversational AI + real-time tools + multi-chain wallets + 33+ specialized agents** in a single interface.
+
+---
+
+## 8. Token economy & earning
+
+### 8.1 Platform economics
+
+heyRISA is designed with a sustainable free-tier model:
+
+- **Free tier** — 200 messages/day, 5 file uploads, 50 special agent uses
+- **AI model access** — all 11 models available on free tier with rate limits
+- **No paywall for core features** — market analysis, trading signals, and wallet scanning are free
+
+### 8.2 Future monetization paths
+
+| Revenue stream | Description |
+|----------------|-------------|
+| Pro tier | Higher message limits, priority model access, advanced features |
+| API access | Programmatic access to heyRISA tools for developers and institutions |
+| Premium agents | Specialized agents with exclusive data sources |
+| White-label | Custom deployments for exchanges, funds, and protocols |
+
+---
+
+## 9. Roadmap
+
+### Phase 1: Foundation (completed)
+- 33+ specialized AI agents
+- 40+ real-data tools
+- Multi-model AI support (11 models, 5 providers)
+- Multi-chain wallet integration (25+ chains)
+- Real-time market analysis and trading signals
+- Conversational interface with streaming responses
+
+### Phase 2: Enhanced intelligence
+- Custom AI models trained on crypto-specific datasets
+- Automated trading signal alerts and notifications
+- Advanced backtesting for strategy validation
+- Social trading features with copy-trading capabilities
+
+### Phase 3: Ecosystem expansion
+- API access for developers and institutional clients
+- Plugin system for community-built agents and tools
+- Mobile native applications (iOS, Android)
+- Integration with major exchanges for direct trading
+
+### Phase 4: Autonomous agents
+- Fully autonomous AI trading bots with user-defined parameters
+- Cross-platform portfolio management
+- Decentralized identity integration (DID/Verifiable Credentials)
+- Advanced derivatives and structured product analysis
+
+---
+
+## 10. Team & vision
+
+heyRISA is built by a team of crypto-native developers and AI engineers who have experienced the pain of fragmented tooling firsthand. The vision is to make institutional-grade crypto intelligence accessible to everyone — from first-time traders to seasoned degens — through the most natural interface possible: conversation.
+
+The platform is designed to grow with the crypto ecosystem. As new chains launch, new DeFi protocols emerge, and new AI models become available, heyRISA's modular architecture allows rapid integration without rebuilding core infrastructure.
+
+---
+
+## 11. Conclusion
+
+heyRISA represents the convergence of three megatrends:
+
+1. **AI agents** — specialized, tool-equipped AI that can reason and act on real-time data
+2. **Crypto market maturation** — growing demand for sophisticated analysis as markets evolve
+3. **Conversational interfaces** — the most accessible way to interact with complex data
+
+By combining 33+ specialized agents, 40+ real-data tools, 11 AI models, and 25+ chain support into a single conversational platform, heyRISA eliminates the fragmentation that defines today's crypto tooling landscape.
+
+The platform is live, free to use, and growing.
+
+**Start now at [app.heyrisa.com](https://app.heyrisa.com)**
+
+---
+
+<Note>
+This litepaper is a living document. It will be updated as new features, integrations, and capabilities are added to the platform.
+</Note>
