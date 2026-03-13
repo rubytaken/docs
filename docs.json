@@ -49,9 +49,14 @@
           "icon": "rocket"
         },
         {
-          "anchor": "Community",
+          "anchor": "X (Twitter)",
+          "href": "https://x.com/heyrisa",
+          "icon": "x-twitter"
+        },
+        {
+          "anchor": "Telegram",
           "href": "https://t.me/heyrisa",
-          "icon": "comments"
+          "icon": "telegram"
         },
         {
           "anchor": "Litepaper",
@@ -81,8 +86,7 @@
   "footer": {
     "socials": {
       "x": "https://x.com/heyrisa",
-      "telegram": "https://t.me/heyrisa",
-      "github": "https://github.com/rubytaken"
+      "telegram": "https://t.me/heyrisa"
     }
   }
 }
